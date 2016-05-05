@@ -6,8 +6,10 @@ Based on [preboot/angular2-webpack](https://github.com/preboot/angular2-webpack)
 
 ## Screenshots
 
+### Posts Index
 ![Index](docs/index.png?raw=true "Index")
 
+### Posts Edit
 ![Edit](docs/edit.png?raw=true "Edit")
 
 ## Running
