@@ -1,0 +1,15 @@
+<div *ngIf="post">
+	<form [ngFormModel]="postForm" (ngSubmit)="onSubmit()" novalidate>
+		<field [control]="postForm.controls.title">
+			<label>Title</label>
+			<input [(ngModel)]="post.title" ngControl="title" class="form-control">
+		</field>
+		<field [control]="postForm.controls.body">
+			<label>Body</label>
+			<textarea [(ngModel)]="post.body" ngControl="body" rows="6" class="form-control"></textarea>
+		</field>
+		<button type="submit" class="btn btn-default" [disabled]="!postForm.valid">
+			{{ post.id ? 'Update' : 'Create' }} Post
+		</button>
+	</form>
+</div>

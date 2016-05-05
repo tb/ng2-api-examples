@@ -1,21 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'about',
-  template: require('./about.html'),
-  styles: [require('./about.scss')],
+  selector: 'dashboard',
+  template: require('./dashboard.component.html'),
+  styles: [],
   providers: [],
   directives: [],
   pipes: []
 })
-export class About implements OnInit {
+export class DashboardComponent implements OnInit {
 
   constructor() {
     // Do stuff
   }
 
   ngOnInit() {
-    console.log('Hello About');
+    // Do stuff
   }
 
 }
