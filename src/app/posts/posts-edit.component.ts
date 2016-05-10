@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Validators, ControlGroup, FORM_DIRECTIVES, FormBuilder} from '@angular/common';
-import {Router, RouteParams} from '@angular/router-deprecated';
+import {CanActivate, Router, RouteParams} from '@angular/router-deprecated';
 import {PostsService, Post} from './posts.service';
 import {Field} from '../shared/field';
+import {authenticated} from '../auth/auth.service';
 
 @Component({
   selector: 'posts-edit',
@@ -12,6 +13,9 @@ import {Field} from '../shared/field';
   directives: [FORM_DIRECTIVES, Field],
   pipes: []
 })
+
+@CanActivate(() => authenticated())
+
 export class PostsEditComponent implements OnInit {
   post: Post;
   postForm: ControlGroup;

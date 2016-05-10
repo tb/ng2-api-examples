@@ -4,6 +4,12 @@
 			<li><a [routerLink]="['Dashboard']">Dashboard</a></li>
 			<li><a [routerLink]="['Posts']">Posts</a></li>
 		</ul>
+		<ul class="nav navbar-nav pull-right">
+			<li><a *ngIf="!auth.authenticated()" [routerLink]="['Login']">Login</a></li>
+			<li><a *ngIf="auth.authenticated()" href="#" (click)="auth.logout()">
+				Logout <small>{{auth.user.email}}</small>
+			</a></li>
+		</ul>
 	</div>
 </nav>
 

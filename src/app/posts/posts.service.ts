@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
-import {ApiService} from 'ng2-api';
+import {ApiHttp, ApiService} from 'ng2-api';
 
 export interface Post {
   id: number;
@@ -10,7 +9,7 @@ export interface Post {
 
 @Injectable()
 export class PostsService extends ApiService<Post> {
-  constructor(public http: Http) {
-    super(http, 'http://localhost:8081', 'posts');
+  constructor(protected http: ApiHttp) {
+    super(http, 'posts');
   }
 }

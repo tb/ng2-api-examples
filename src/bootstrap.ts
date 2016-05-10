@@ -18,6 +18,7 @@ if (process.env.ENV === 'build') {
  * our top level component that holds all of our components
  */
 import {App} from './app/app';
+import {AUTH_PROVIDERS} from './app/auth/auth.service';
 
 /*
  * Bootstrap our Angular app with a top level component `App` and inject
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function main() {
     ...HTTP_PROVIDERS,
     ...ROUTER_PROVIDERS,
     ...ENV_PROVIDERS,
+    ...AUTH_PROVIDERS,
     { provide: LocationStrategy, useClass: HashLocationStrategy } // use #/ routes, remove this for HTML5 mode
   ])
   .catch(err => console.error(err));

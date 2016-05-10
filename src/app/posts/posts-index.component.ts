@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {CanActivate, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {PostsService, Post} from './posts.service';
 import {SearchInput} from '../shared/search-input';
+import {authenticated} from '../auth/auth.service';
 
 @Component({
   selector: 'posts-index',
@@ -11,6 +12,9 @@ import {SearchInput} from '../shared/search-input';
   directives: [ROUTER_DIRECTIVES, SearchInput],
   pipes: []
 })
+
+@CanActivate(() => authenticated())
+
 export class PostsIndexComponent implements OnInit {
   posts: Post[] = [];
 
